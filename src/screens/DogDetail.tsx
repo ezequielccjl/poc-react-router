@@ -4,7 +4,8 @@ import { dogs } from '../data';
 
 const DogDetail = () => {
   const { perroId } = useParams();
-  const dog = dogs.find((d) => d.id === parseInt(perroId));
+
+  const dog = perroId ? dogs.find((d) => d.id === parseInt(perroId)) : null;
 
   if (!dog) {
     return <h2>Perro no encontrado</h2>;
@@ -16,6 +17,7 @@ const DogDetail = () => {
         <h2>{dog.name}</h2>
         <p>Raza: {dog.breed}</p>
         <p>Peso: {dog.weight}</p>
+        <p>{dog.isRabioso ? 'TIENE RABIA' : 'Es mancito =)'}</p>
       </div>
     </div>
   );
