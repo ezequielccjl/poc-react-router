@@ -1,15 +1,15 @@
-import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
+import { Route, BrowserRouter, Routes } from 'react-router-dom';
 import DogDetail from './screens/DogDetail';
 import DogList from './screens/DogList';
 
 const App = () => {
   return (
-    <Router>
+    <BrowserRouter>
       <Routes>
         <Route path='/' element={<DogList />} />
         <Route path='/dogs/:perroId' element={<DogDetail />} />
       </Routes>
-    </Router>
+    </BrowserRouter>
   );
 };
 
